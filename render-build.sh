@@ -11,5 +11,3 @@ npm install
 
 # Build frontend
 npm run build
-
-# force git to detect change
