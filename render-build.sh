@@ -1,13 +1,9 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-# Install server dependencies
+# Install backend dependencies
+cd server
 npm install
 
-# Move to client folder
-cd client
-
-# Install frontend dependencies
-npm install
-
-# Build frontend
-npm run build
+# (Optional) You can also install frontend deps if needed later
+# cd ../client
+# npm install
