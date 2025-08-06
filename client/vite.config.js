@@ -1,7 +1,8 @@
+// client/vite.config.js
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
+  base: './',     // ✅ THIS LINE IS CRITICAL
   plugins: [react()],
-  base: './', // ✅ This fixes asset path issues on deployment
 })
