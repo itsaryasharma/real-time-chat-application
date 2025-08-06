@@ -4,7 +4,7 @@ client/node_modules/
 server/node_modules/
 
 # Build output
-client/dist/
+# client/dist/
 
 # Logs
 *.log
@@ -14,5 +14,4 @@ client/dist/
 
 # OS junk
 .DS_Store
-
 

@@ -117,7 +117,19 @@ function getRoomUserCount(room) {
   return roomUsers.has(room) ? roomUsers.get(room).size : 0;
 }
 
+
+const path = require('path');
+
+// Serve static files from the React app (client/dist)
+app.use(express.static(path.join(__dirname, '../client/dist')));
+
+// For any route not handled by the server (like /chat, /room/xyz etc.), serve index.html
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+});
+
+// Start the server
 const PORT = process.env.PORT || 3001;
 server.listen(PORT, () => {
   // console.log(`Server running on port ${PORT}`);
-}); 
+});
