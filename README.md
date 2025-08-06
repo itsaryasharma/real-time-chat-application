@@ -22,9 +22,9 @@
 - [Contributing](#-contributing)
 - [License](#-license)
 
-## 🌐 Live Demo
+## 🌐 Live Demo 👉 [Check it out on Render](https://real-time-chat-application-rk6g.onrender.com)
 
-👉 [Check it out on Render](https://real-time-chat-application-rk6g.onrender.com)
+---
 
 **COMPANY:** CODETECH IT SOLUTIONS
 
