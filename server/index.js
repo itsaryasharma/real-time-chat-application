@@ -13,10 +13,14 @@ app.use(cors());
 // Configure Socket.IO with CORS
 const io = socketIo(server, {
   cors: {
-    origin: "http://localhost:5173", // Vite dev server
+    origin: [
+      "http://localhost:5173",
+      "https://real-time-chat-application-rk6g.onrender.com"
+    ],
     methods: ["GET", "POST"]
   }
 });
+
 
 // Store room users
 const roomUsers = new Map(); // room -> Set of socket IDs

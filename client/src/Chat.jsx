@@ -83,7 +83,8 @@ const Chat = () => {
 
   // Socket.IO connection and event handling
   useEffect(() => {
-    socket.current = io('http://localhost:3001');
+    socket.current = io('https://real-time-chat-application-rk6g.onrender.com');
+
 
     // Handle successful connection
     socket.current.on('connect', () => {
