@@ -1,5 +1,31 @@
 # 🟢 REAL-TIME CHAT APPLICATION
 
+![GitHub repo size](https://img.shields.io/github/repo-size/itsaryasharma/real-time-chat-application)
+![GitHub stars](https://img.shields.io/github/stars/itsaryasharma/real-time-chat-application?style=social)
+![Deployed on Render](https://img.shields.io/badge/Backend%20Deployed-Render-blue)
+![Status](https://img.shields.io/badge/Status-Live%20%7C%20Working-brightgreen)
+![Built with](https://img.shields.io/badge/Built%20With-React%20%7C%20Node.js%20%7C%20Socket.IO-blue)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
+
+## 📚 Table of Contents
+
+- [Live Demo](#-live-demo)
+- [Project Overview](#-project-overview)
+- [Key Learnings](#-key-learnings)
+- [Project Structure](#-project-structure)
+- [Tech Stack](#️-tech-stack)
+- [Features](#-features)
+- [How to Run Locally](#️-how-to-run-locally)
+- [WebSocket Events](#-web-socket-events)
+- [Troubleshooting](#-troubleshooting)
+- [Future Improvements](#-future-improvements)
+- [Contributing](#-contributing)
+- [License](#-license)
+
+## 🌐 Live Demo
+
+👉 [Check it out on Render](https://real-time-chat-application-rk6g.onrender.com)
+
 **COMPANY:** CODETECH IT SOLUTIONS
 
 **NAME:** ARYA KUMAR
@@ -66,7 +92,7 @@ REAL-TIME-CHAT-APPLICATION/
 ├── client/          # React frontend (Vite)
 │   └── README.md
 ├── server/          # Node.js backend
-│   
+│
 └── README.md        # ← You're here (Root README)
 ```
 
@@ -101,9 +127,10 @@ REAL-TIME-CHAT-APPLICATION/
 ---
 
 🚀 **This project is a functional MVP (Minimum Viable Product)** of a real-time chat application.  
-It demonstrates end-to-end WebSocket communication using **React**, **Node.js**, **Express**, and **Socket.IO** — without needing authentication or a database.  
+It demonstrates end-to-end WebSocket communication using **React**, **Node.js**, **Express**, and **Socket.IO** — without needing authentication or a database.
 
 Users can:
+
 - Join any room
 - Send and receive real-time messages
 - See how many users are online
@@ -118,7 +145,7 @@ This MVP proves the core functionality works and lays the foundation for future 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/real-time-chat-app.git
+git clone https://github.com/itsaryasharma/real-time-chat-application
 cd real-time-chat-app
 ```
 
@@ -239,7 +266,6 @@ ISC License
 <img width="1917" height="1016" alt="Image" src="https://github.com/user-attachments/assets/78b3fe7b-adf6-411d-a1f7-8fb0139a398c" />
 
 <img width="1918" height="1016" alt="Image" src="https://github.com/user-attachments/assets/dc855ab0-29c1-428d-bbaa-3ee9d5c0121b" />
-
 
 ---
 
