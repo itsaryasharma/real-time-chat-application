@@ -87,7 +87,7 @@ const Chat = () => {
 
     // Handle successful connection
     socket.current.on('connect', () => {
-      console.log('Socket.IO connection opened');
+      // console.log('Socket.IO connection opened');
       setIsConnected(true);
       // Join the current room when connected
       socket.current.emit('join_room', room);
@@ -95,25 +95,25 @@ const Chat = () => {
 
     // Handle disconnection
     socket.current.on('disconnect', () => {
-      console.log('Socket.IO connection closed');
+      // console.log('Socket.IO connection closed');
       setIsConnected(false);
     });
 
     // Listen for incoming messages from other users
     socket.current.on('receive_message', (data) => {
-      console.log('Received message:', data);
+      // console.log('Received message:', data);
       setMessages(prevMessages => [...prevMessages, data]);
     });
 
     // Listen for real-time user count updates
     socket.current.on('user_count_update', (count) => {
-      console.log('User count updated:', count);
+      // console.log('User count updated:', count);
       setOnlineUsers(count);
     });
 
     // Listen for typing indicators
     socket.current.on('user_typing', (data) => {
-      console.log('User typing:', data);
+      // console.log('User typing:', data);
       setTypingUsers(prevUsers => {
         // Add user to typing list if not already there
         if (!prevUsers.find(user => user.userId === data.userId)) {
@@ -125,7 +125,7 @@ const Chat = () => {
 
     // Listen for typing stop indicators
     socket.current.on('user_stopped_typing', (data) => {
-      console.log('User stopped typing:', data);
+      // console.log('User stopped typing:', data);
       setTypingUsers(prevUsers => 
         prevUsers.filter(user => user.userId !== data.userId)
       );
@@ -175,7 +175,7 @@ const Chat = () => {
     // Remove saved data from localStorage
     localStorage.removeItem('chatUsername');
     localStorage.removeItem('chatRoom');
-    
+    localStorage.removeItem(`chatMessages-${room}`);
     // Reload the app to reset state
     window.location.reload();
   };
@@ -363,7 +363,7 @@ const Chat = () => {
               className="room-dropdown"
             >
               {predefinedRooms.map(roomName => (
-                <option key={roomName} value={roomName}>
+                <option className="dropdown-option" clakey={roomName} value={roomName}>
                   #{roomName}
                 </option>
               ))}
@@ -380,7 +380,12 @@ const Chat = () => {
                 onChange={e => setCustomRoom(e.target.value)}
                 placeholder="Enter room name..."
                 className="custom-room-input"
-                onKeyDown={(e) => e.key === 'Enter' && handleCustomRoomJoin()}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    handleCustomRoomJoin();
+                  }
+                }}
+                
               />
               <button 
                 onClick={handleCustomRoomJoin}

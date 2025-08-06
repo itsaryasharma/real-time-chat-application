@@ -23,7 +23,7 @@ const roomUsers = new Map(); // room -> Set of socket IDs
 
 // Socket.IO connection handling
 io.on('connection', (socket) => {
-  console.log('A user connected:', socket.id);
+  // console.log('A user connected:', socket.id);
 
   // Handle user joining a room
   socket.on('join_room', (room) => {
@@ -38,7 +38,7 @@ io.on('connection', (socket) => {
     socket.room = room; // Store current room on socket object
     addUserToRoom(room, socket.id);
 
-    console.log(`User ${socket.id} joined room: ${room}`);
+    // console.log(`User ${socket.id} joined room: ${room}`);
 
     // Emit user count update to all users in the room
     const userCount = getRoomUserCount(room);
@@ -51,7 +51,7 @@ io.on('connection', (socket) => {
     removeUserFromRoom(room, socket.id);
     socket.room = null; // Clear room from socket
 
-    console.log(`User ${socket.id} left room: ${room}`);
+    // console.log(`User ${socket.id} left room: ${room}`);
 
     // Emit user count update to remaining users in the room
     const userCount = getRoomUserCount(room);
@@ -65,7 +65,7 @@ io.on('connection', (socket) => {
 
   // Handle typing indicators
   socket.on('typing', (data) => {
-    console.log(`User ${data.username} is typing in room ${data.room}`);
+    // console.log(`User ${data.username} is typing in room ${data.room}`);
     // Broadcast typing indicator to other users in the room
     socket.to(data.room).emit('user_typing', {
       username: data.username,
@@ -75,7 +75,7 @@ io.on('connection', (socket) => {
 
   // Handle typing stop indicators
   socket.on('stop_typing', (data) => {
-    console.log(`User ${data.username} stopped typing in room ${data.room}`);
+    // console.log(`User ${data.username} stopped typing in room ${data.room}`);
     // Broadcast typing stop indicator to other users in the room
     socket.to(data.room).emit('user_stopped_typing', {
       username: data.username,
@@ -85,7 +85,7 @@ io.on('connection', (socket) => {
 
   // Handle disconnection
   socket.on('disconnect', () => {
-    console.log('User disconnected:', socket.id);
+    // console.log('User disconnected:', socket.id);
 
     // Remove user from their current room
     if (socket.room) {
@@ -119,5 +119,5 @@ function getRoomUserCount(room) {
 
 const PORT = process.env.PORT || 3001;
 server.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  // console.log(`Server running on port ${PORT}`);
 }); 
