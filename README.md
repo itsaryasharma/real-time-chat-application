@@ -228,6 +228,19 @@ ISC License
 
 # OUTPUTS
 
+<img width="1917" height="1013" alt="Image" src="https://github.com/user-attachments/assets/a974d587-38e0-4439-b8e3-fb30a41bc131" />
+
+<img width="1918" height="1012" alt="Image" src="https://github.com/user-attachments/assets/3532d7ce-f205-47ff-81a0-74411920f26c" />
+
+<img width="1915" height="1017" alt="Image" src="https://github.com/user-attachments/assets/4ca627f0-a3e3-4e2a-866a-ca0d63010c53" />
+
+<img width="1913" height="1013" alt="Image" src="https://github.com/user-attachments/assets/f40c8e04-f3f2-45b6-906a-b5e0fc3d5533" />
+
+<img width="1917" height="1016" alt="Image" src="https://github.com/user-attachments/assets/78b3fe7b-adf6-411d-a1f7-8fb0139a398c" />
+
+<img width="1918" height="1016" alt="Image" src="https://github.com/user-attachments/assets/dc855ab0-29c1-428d-bbaa-3ee9d5c0121b" />
+
+
 ---
 
 > **Thank you for reviewing my project!**
