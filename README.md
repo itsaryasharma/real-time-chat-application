@@ -249,7 +249,7 @@ The client will start on: `http://localhost:5173`
 
 ## 📜 LICENSE
 
-ISC License
+MIT License
 
 ---
 
