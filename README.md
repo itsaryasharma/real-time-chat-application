@@ -89,19 +89,19 @@ REAL-TIME-CHAT-APPLICATION/
 | Frontend              | React, Vite                                   |
 |                       | Socket.IO                                     |
 |                       | Client,axios                                  |
-| ----------            | -------------                                 |
+|                       |                                               |
 | Backend               | Node.js,                                      |
 |                       | Express.js                                    |
 |                       | Socket.IO                                     |
 |                       | Multer                                        |
-| ----------            | -------------                                 |
+|                       |                                               |
 | Protocol              | WebSockets                                    |
-| ----------            | -------------                                 |
+|                       |                                               |
 | Tools                 | UUID, CORS                                    |
 |                       | dotenv                                        |
-| ----------            | -------------                                 |
+|                       |                                               |
 | Ready for Deployment? | ✅ Yes (`Vercel` + `Render` or VPS supported) |
-| ----------            | -------------                                 |
+|                       |                                               |
 
 ---
 
@@ -254,17 +254,17 @@ MIT License
 
 # OUTPUTS
 
-<img width="1917" height="1013" alt="Image" src="https://github.com/user-attachments/assets/a974d587-38e0-4439-b8e3-fb30a41bc131" />
+<img width="1907" height="865" alt="Image" src="https://github.com/user-attachments/assets/5660d241-927f-4764-9173-2cee815eafc1" />
 
-<img width="1918" height="1012" alt="Image" src="https://github.com/user-attachments/assets/3532d7ce-f205-47ff-81a0-74411920f26c" />
+<img width="1907" height="872" alt="Image" src="https://github.com/user-attachments/assets/9e42a11c-eb11-495b-b6bb-5ae0e538e4ef" />
 
-<img width="1915" height="1017" alt="Image" src="https://github.com/user-attachments/assets/4ca627f0-a3e3-4e2a-866a-ca0d63010c53" />
+<img width="1910" height="867" alt="Image" src="https://github.com/user-attachments/assets/c3feb336-257c-43fd-87a3-96f4d1d3788d" />
 
-<img width="1913" height="1013" alt="Image" src="https://github.com/user-attachments/assets/f40c8e04-f3f2-45b6-906a-b5e0fc3d5533" />
+<img width="1917" height="872" alt="Image" src="https://github.com/user-attachments/assets/889aed1a-396c-4e1a-95b3-a8e1f2251b7e" />
 
-<img width="1917" height="1016" alt="Image" src="https://github.com/user-attachments/assets/78b3fe7b-adf6-411d-a1f7-8fb0139a398c" />
+<img width="1916" height="871" alt="Image" src="https://github.com/user-attachments/assets/610a51e7-2d49-4436-bcd9-1ca65bab9c9b" />
 
-<img width="1918" height="1016" alt="Image" src="https://github.com/user-attachments/assets/dc855ab0-29c1-428d-bbaa-3ee9d5c0121b" />
+<img width="1917" height="870" alt="Image" src="https://github.com/user-attachments/assets/3de3df62-9cc1-42e4-aa71-ddfe6b682b95" />
 
 ---
 
