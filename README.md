@@ -7,7 +7,7 @@
 ![Built with](https://img.shields.io/badge/Built%20With-React%20%7C%20Node.js%20%7C%20Socket.IO-blue)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
-## 📚 Table of Contents
+## 📚 TABLE OF CONTENTS
 
 - [Live Demo](#-live-demo)
 - [Project Overview](#-project-overview)
@@ -42,46 +42,28 @@
 
 ## 📦 PROJECT OVERVIEW
 
-This real-time chat application was developed as part of my internship at CodeTech IT Solutions, under the domain of Full Stack Web Development. The project was built using a modern and scalable tech stack including React.js, Node.js, Express, and Socket.IO, with the goal of learning how real-time communication works in web applications. The final outcome is a responsive, desktop-first chat system that enables seamless messaging between users across dynamic chat rooms.
+As part of my internship at **CodeTech IT Solutions**, I built a production-ready real-time chat application using **React (Vite), Node.js, Express, and Socket.IO**.
 
-- The application offers a variety of interactive features such as:
+Key features:
 
-- Real-time message sending and receiving using WebSockets
+- Real-time messaging across multiple dynamic chat rooms
+- Online user counts per room + clean room switching
+- Responsive, modern UI styled with plain CSS
 
-- Support for multiple chat rooms that users can dynamically join or leave
+On the **frontend**, I used React hooks to manage socket events and update the UI instantly.  
+On the **backend**, an Express + Socket.IO server handled room events like join, leave, and broadcast.
 
-- A live counter showing the number of online users in each room
-
-- Clean room switching functionality
-
-- Ability to set and persist a custom username across sessions using localStorage
-
-While building this application, I focused not just on implementing the features, but also on deeply understanding the underlying technologies. The project uses Socket.IO, a library built on top of WebSockets, to create full-duplex real-time communication between the frontend and backend. Every time a user opens the application, a new socket connection is established, uniquely identified by a socket ID. This ID is used by the server to manage events like joining rooms, sending messages, and broadcasting updates to the right users.
-
-On the frontend, I used React.js with Vite for a fast development setup. I built reusable components and managed state using React hooks like useState, useEffect, and useRef. These allowed me to listen to incoming socket events and update the UI instantly. I also added a room selector, username input, and chat history pane to make the experience more user-friendly. The user interface was designed to be clean, modern, and scalable, with professional layout and styling done entirely using plain CSS (without UI libraries).
-
-The backend was developed using Node.js and Express, and it acts as the WebSocket server using socket.io. The server listens for events like join_room or send_message, and then emits those messages to users in the same room. Thanks to Socket.IO’s built-in room feature, there’s no need for a complex mapping system — the server automatically handles which user belongs to which room.
-
-What makes this project even more meaningful is that I didn't just write code blindly. I used AI pair-programming tools to get help when I was stuck — but always ensured I understood what every line of code did. I treated these tools as collaborators, not crutches. By doing this, I gained confidence in how a real-time app is built and deployed.
-
-Through this experience, I’ve learned full-stack concepts such as client-server communication, REST vs WebSocket protocols, event-driven architectures, state management in React, and how real-time systems handle concurrency and synchronization.
-
-The entire project is production-ready and can be deployed using services like Render for the backend and Vercel for the frontend. With further enhancements such as user authentication, typing indicators, file sharing, and database integration, this app could evolve into a fully functional messaging platform.
-
-In conclusion, this internship project was not just an exercise in building a working app — it was a deep dive into how modern web systems function under the hood. I now feel confident in saying that I understand the full stack life cycle of a real-time application, and I can apply these skills to future web development challenges.
+This project gave me hands-on experience with **full-stack real-time communication**, covering WebSockets vs REST, event-driven design, and state management. It’s deployable (Render + Vercel) and ready for enhancements like typing indicators and authentication.
 
 ## 🧠 KEY LEARNINGS
 
-- Real-time bi-directional communication using **WebSockets / Socket.IO**
-- Creating and managing dynamic **chat rooms**
-- Emitting and listening for socket events like `join_room`, `send_message`, and `receive_message`
-- Maintaining socket sessions, user states, and rooms
-- Frontend concepts like `useEffect`, `useRef`, `useState`, and component-based structure
-- Responsive and professional UI using plain CSS (no libraries used)
-- Client-server communication using REST and Socket events
-- Local storage for persisting user information
-- Clean and production-ready folder structure
-- Git & GitHub version control with clean commit history
+- Real-time bidirectional communication with **Socket.IO**
+- Managing chat rooms and per-room user counts
+- Uploading and serving files securely via **Multer** (UUID filenames)
+- Environment-driven CORS configuration for safe deployment
+- React hooks and lifecycle for real-time UI updates (`useState`, `useEffect`, `useRef`)
+- Deployment strategies and trade-offs (committing `client/dist` vs. building on deploy)
+- Preserving contributor authorship when merging PRs
 
 ---
 
@@ -100,29 +82,39 @@ REAL-TIME-CHAT-APPLICATION/
 
 ## ⚙️ TECH STACK
 
-| Layer    | Technology  |
-| -------- | ----------- |
-| Frontend | React, Vite |
-|          | Socket.IO   |
-|          | Client      |
-| Backend  | Node.js,    |
-|          | Express.js  |
-|          | Socket.IO   |
-| Protocol | WebSockets  |
+---
 
+| Layer                 | Technology                                    |
+| --------------------- | --------------------------------------------- |
+| Frontend              | React, Vite                                   |
+|                       | Socket.IO                                     |
+|                       | Client,axios                                  |
+| ----------            | -------------                                 |
+| Backend               | Node.js,                                      |
+|                       | Express.js                                    |
+|                       | Socket.IO                                     |
+|                       | Multer                                        |
+| ----------            | -------------                                 |
+| Protocol              | WebSockets                                    |
+| ----------            | -------------                                 |
+| Tools                 | UUID, CORS                                    |
+|                       | dotenv                                        |
+| ----------            | -------------                                 |
 | Ready for Deployment? | ✅ Yes (`Vercel` + `Render` or VPS supported) |
+| ----------            | -------------                                 |
 
 ---
 
 ## 🚀 FEATURES
 
-- ⚡ Real-time messaging
-- 🧑‍🤝‍🧑 Dynamic chat rooms
-- 🌐 Socket.IO connection and broadcasting
-- 👤 Username persistence using `localStorage`
-- 👁️ Online users count per room
-- 💻 Desktop-first responsive UI with mobile support
-- 🧼 Clean code and structured file system
+- ⚡ Real-time messaging (Socket.IO)
+- 🧑‍🤝‍🧑 Dynamic chat rooms (predefined + custom)
+- 🌐 Live online user counts per room
+- ✍️ Typing indicators
+- 👤 Username persistence via `localStorage`
+- 📎 **File & Image Uploads** (Multer + Axios)
+- 🖼️ Image preview inline within chat bubbles
+- 💻 Responsive, mobile-friendly UI
 
 ---
 
@@ -135,6 +127,7 @@ Users can:
 - Send and receive real-time messages
 - See how many users are online
 - Instantly connect across the globe
+- Send images and files in chat
 
 This MVP proves the core functionality works and lays the foundation for future upgrades like login, database storage, private messaging, and more.
 
@@ -146,7 +139,7 @@ This MVP proves the core functionality works and lays the foundation for future 
 
 ```bash
 git clone https://github.com/itsaryasharma/real-time-chat-application
-cd real-time-chat-app
+cd real-time-chat-application
 ```
 
 ### 2. Install Backend Dependencies
@@ -201,6 +194,7 @@ The client will start on: `http://localhost:5173`
 
 - Frontend: http://localhost:5173
 - Backend: http://localhost:3001
+- Upload endpoint: POST /upload (multipart/form-data) → returns { url, filename }
 
 ---
 
@@ -230,11 +224,8 @@ The client will start on: `http://localhost:5173`
 ## 🚧 FUTURE IMPROVEMENTS
 
 - 🔒 User authentication system
-- 💬 Typing indicators
 - 🧾 Message persistence via database
-- 📎 File/image sharing
 - 🧑 User profiles and avatars
-- 🌍 Deployment to Render/Vercel for global access
 
 ---
 
@@ -244,6 +235,14 @@ The client will start on: `http://localhost:5173`
 2. Create a feature branch
 3. Commit your changes
 4. Push and submit a pull request
+
+---
+
+## 🤗 ACKNOWLEDGEMENTS
+
+Special thanks to **Aditya Anurag** for implementing the **file & image upload feature**  
+(Multer integration, image preview in chat, and file handling).  
+His contribution is included in this project and preserved in the commit history.
 
 ---
 
