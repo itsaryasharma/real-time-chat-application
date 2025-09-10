@@ -442,6 +442,8 @@ body {
   overflow: hidden;
 }
 
+
+
 /* Chat header */
 .chat-header {
   background: linear-gradient(135deg, rgba(49, 130, 206, 0.8), rgba(44, 90, 160, 0.8));
@@ -1033,7 +1035,7 @@ body {
 }
 
 
-/* gpt addons */
+
 
 
 /* ====== Patch: file upload UI fixes & accessibility ====== */
@@ -1072,14 +1074,6 @@ body {
   width: 360px;
 }
 
-/* small screen adjustments for the preview */
-@media (max-width: 600px) {
-  .selected-attachment {
-    width: calc(100vw - 32px);
-    left: 8px;
-    bottom: 90px;
-  }
-}
 
 /* ensure attach dropdown appears above everything */
 .attach-dropdown {
@@ -1137,8 +1131,3 @@ body {
   overflow-wrap: anywhere;
 }
 
-/* small-device tweak already present; keep ensures images scale */
-@media (max-width: 600px) {
-  .message img { max-width: 140px; }
-  .message-bubble { max-width: 86%; }
-}
