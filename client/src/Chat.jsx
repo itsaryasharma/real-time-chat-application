@@ -2,8 +2,12 @@ import React, { useEffect, useRef, useState } from "react";
 import { io } from "socket.io-client";
 import axios from "axios";
 import { Paperclip } from "lucide-react";
-
 import "./Chat.css";
+
+
+const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:3001";
+
+// console.log('API_BASE =', API_BASE);
 
 const Chat = () => {
   // State management for chat functionality
@@ -128,7 +132,8 @@ const Chat = () => {
 
   // Socket.IO connection and event handling
   useEffect(() => {
-    socket.current = io("https://real-time-chat-application-rk6g.onrender.com");
+    // socket.current = io("https://real-time-chat-application-rk6g.onrender.com");
+    socket.current = io(API_BASE);
 
     // Handle successful connection
     socket.current.on("connect", () => {
@@ -262,39 +267,7 @@ const Chat = () => {
       }, 2000);
     }
   };
-  // Handle file selection
-  const handleFileChange = (e) => {
-    setFile(e.target.files[0]);
-  };
 
-  // Upload file to server
-  const sendFile = async () => {
-    if (!file) return;
-
-    const formData = new FormData();
-    formData.append("file", file);
-
-    try {
-      const res = await axios.post("http://localhost:3001/upload", formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
-
-      const fileMessage = {
-        message: res.data.fileUrl, // The uploaded file URL
-        room: room,
-        author: username,
-        userId: userId,
-        time: new Date().toLocaleTimeString(),
-        type: "file",
-      };
-
-      setMessages((prevMessages) => [...prevMessages, fileMessage]);
-      socket.current.emit("send_message", fileMessage);
-      setFile(null); // clear after sending
-    } catch (err) {
-      console.error("File upload failed:", err);
-    }
-  };
 
   // Send message to the current room
   const sendMessage = async () => {
@@ -315,14 +288,15 @@ const Chat = () => {
     if (selectedAttachment) {
       const formData = new FormData();
       formData.append("file", selectedAttachment);
+      
 
       try {
-        const res = await axios.post("http://localhost:3001/upload", formData, {
+        const res = await axios.post(`${API_BASE}/upload`, formData, {
           headers: { "Content-Type": "multipart/form-data" },
         });
 
         const fileMessage = {
-          message: res.data.fileUrl,
+          message: res.data.url,
           room,
           author: trimmedUsername,
           userId,
@@ -360,6 +334,8 @@ const Chat = () => {
       setMessage("");
     }
   };
+
+  // handleFileUpload --
   const handleFileUpload = async (e) => {
     const file = e.target.files[0];
     if (!file) return;
@@ -368,7 +344,7 @@ const Chat = () => {
     formData.append("file", file);
 
     try {
-      const res = await axios.post("http://localhost:3001/upload", formData, {
+      const res = await axios.post(`${API_BASE}/upload`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
