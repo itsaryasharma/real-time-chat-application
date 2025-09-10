@@ -3,14 +3,24 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
 
 /* App.css */
 .app-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Instead of min-height */
-  overflow: hidden; /* Prevent child overflow */
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  left: 0;
 }
 
 
@@ -21,7 +31,13 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
+  height: 100vh;
   overflow-x: hidden;
+  overflow-y: hidden;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 /* Main chat app container */
@@ -33,6 +49,8 @@ body {
   background: transparent;
   position: relative;
   overflow: hidden;
+  max-width: 100vw;
+  max-height: 100vh;
 }
 
 
@@ -975,9 +993,86 @@ body {
   }
 } 
 
+/* Mobile-specific fixes to prevent black patches and improve responsiveness */
 @media (max-width: 768px) {
   .chat-header {
     padding-top: 41px; /* Adjust this value based on your hamburger height */
+  }
+  
+  /* Fix mobile viewport issues */
+  html, body {
+    height: 100vh;
+    height: -webkit-fill-available;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+  
+  .app-container {
+    height: 100vh;
+    height: -webkit-fill-available;
+    width: 100vw;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  
+  .chat-app {
+    height: 100vh;
+    height: -webkit-fill-available;
+    width: 100vw;
+    overflow: hidden;
+  }
+  
+  .chat-window {
+    height: 100vh;
+    height: -webkit-fill-available;
+    margin: 0;
+    border-radius: 0;
+    border: none;
+  }
+  
+  /* Prevent zoom on input focus */
+  input, textarea, select {
+    font-size: 16px !important;
+    transform: translateZ(0);
+    -webkit-appearance: none;
+    border-radius: 0;
+  }
+  
+  /* Fix for iOS Safari */
+  .messages-container {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Prevent bounce scrolling on iOS */
+  body {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: none;
+  }
+  
+  /* Fix for Android Chrome */
+  .chat-window {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  
+  /* Additional iOS Safari fixes */
+  .chat-window {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+  
+  /* Prevent address bar from affecting layout */
+  @supports (-webkit-touch-callout: none) {
+    .chat-window {
+      height: -webkit-fill-available;
+    }
   }
 }
 
@@ -1121,7 +1216,7 @@ body {
 /* prevent app-level overflow clipping of dropdowns on mobile */
 .app-container {
   /* replace hard overflow:hidden with safer rules */
-  overflow: visible;
+  overflow: hidden;
 }
 
 /* ensure message-bubble wraps long filenames / links */
