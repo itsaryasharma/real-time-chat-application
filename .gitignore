@@ -7,7 +7,7 @@ client/.env
 server/.env
 
 # Build output
-# client/dist/
+
 
 # Logs
 *.log
