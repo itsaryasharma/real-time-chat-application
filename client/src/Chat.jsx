@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { io } from "socket.io-client";
 import axios from "axios";
-import { Paperclip } from "lucide-react";
+import { Paperclip, Send } from "lucide-react";
 import "./Chat.css";
 
 
@@ -710,8 +710,9 @@ const Chat = () => {
               disabled={
                 !isUsernameValid() || (!message.trim() && !selectedAttachment)
               }
+              title="Send message"
             >
-              Send
+              <Send size={20} />
             </button>
           </div>
         </div>
